@@ -15,8 +15,12 @@ public class HospitalPatientDaoImpl implements HospitalPatientDao {
 	@Override
 	public int insertPatient(HospitalpatientBo hpbo) {
 		int idval=0;
+		
+		ht.setCheckWriteOperations(false);
 		idval=(int) ht.save(hpbo);
-		return 0;
+		
+		
+		return idval;
 	}
 
 }
